@@ -1,7 +1,12 @@
 
 <!-- Put this in the HTML section in JSFiddle! -->
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
-
 <div id="app">
-	<p>{{ title }}</p>
+	<h1 v-once>{{title}}</h1>
+	<p>{{ sayHello() }} - <a :href="link">google</a></p>
+	<hr>
+	<p v-html="finishedLink"></p>
 </div>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="app.js"></script>
+

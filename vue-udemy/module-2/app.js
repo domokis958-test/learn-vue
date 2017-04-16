@@ -3,11 +3,14 @@
 new Vue({
 	el: '#app',
 	data: {
-		title: 'Hello World!'
+		title: 'Hello World!',
+		link: 'http://google.com',
+		finishedLink: '<a href="http://google.com">Google</a>'
 	},
   methods: {
   	sayHello: function() {
-    	return this.title;
+		  this.title = 'hello'
+		  return this.title;
     }
   }
 })
