@@ -4,8 +4,8 @@ new Vue({
   	title:'test'
   },
   methods: { 
-    changeTitle: function() {
-      this.title = "testw2w"
+    changeTitle: function(event) {
+      this.title = event.target.value;
     }
   }
 });
