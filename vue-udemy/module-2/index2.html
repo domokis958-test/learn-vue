@@ -6,6 +6,7 @@
     <p v-on:mousemove="updateCoordinates">{{x}} / {{y}}
         <span v-on:mousemove.stop="">DEAD SPOT</span>
     </p>
+    <input type="text"v-on:keyup.enter.space="alertMe">
 </div>
 
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
