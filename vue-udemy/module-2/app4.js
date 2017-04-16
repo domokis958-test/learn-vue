@@ -15,5 +15,14 @@ new Vue({
             console.log("conmputed method run");
             return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
         }
+    },
+    watch: {
+        counter: function(value) {
+            var vm = this;
+            setTimeout(function() {
+                vm.counter = 0;
+            }, 2000);
+
+        }
     }
 })
