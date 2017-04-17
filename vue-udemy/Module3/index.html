@@ -1,0 +1,12 @@
+
+<!-- Put this in the HTML section in JSFiddle! -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+	<p v-if="show">You can see me!</p>
+	<p v-else>You cannot see if</p>
+	<p>Do you also see me?</p>
+	<button v-on:click="show = !show">Switch</button>
+</div>
+
+<script src="app.js"></script>
