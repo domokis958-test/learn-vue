@@ -1,0 +1,12 @@
+
+<!-- Put this in the HTML section in JSFiddle! -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<link rel="stylesheet" type="text/css" href="css5.css"><div id="app">
+  <div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
+  <div class="demo" :class="{red: attachRed}"></div>
+  <div class="demo" :class="[color, {red: attachRed}]"></div>
+  <hr>
+  <input type="text" v-model="color">
+</div>
+
+<script src="app5.js"></script>
