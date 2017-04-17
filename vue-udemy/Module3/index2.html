@@ -4,6 +4,20 @@
     <ul>
         <li v-for="(ingredient,i) in ingredients">{{ingredient}} (({{i}}))</li>
     </ul>
+
+    <hr>
+    <hr>
+
+    <ul>
+        <li v-for="person in persons">
+            <div v-for="(value, key, index) in person">{{index}}  {{key}}  {{value}}</div>
+        </li>
+    </ul>
+
+    <template v-for="(ingredient,i) in ingredients">
+        <h1>{{ingredient}}</h1>
+        <p>{{i}}</p>
+    </template>
 </div>
 
 <script src="app2.js"></script>
