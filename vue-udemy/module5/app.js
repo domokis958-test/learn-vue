@@ -1,9 +1,11 @@
-var vm1 = new Vue({
-  el: '#app1',
-  data: {
+var data = {
     title: 'The VueJS Instance',
     showParagraph: false
-  },
+  };
+
+var vm1 = new Vue({
+  el: '#app1',
+  data: data,
   methods: {
     show: function() {
       this.showParagraph = true;
@@ -26,7 +28,7 @@ var vm1 = new Vue({
 });
 
 vm1.newProp = 'New'; // this also works. we are creating new property. but this is not watched by vue and is useless for many things.
-console.log(vm1);
+console.log(vm1.$data === data);
 
 setTimeout(function() {
   vm1.title = "Changed by title";
