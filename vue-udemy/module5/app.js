@@ -25,8 +25,12 @@ var vm1 = new Vue({
   }
 });
 
+vm1.newProp = 'New'; // this also works. we are creating new property. but this is not watched by vue and is useless for many things.
+console.log(vm1);
+
 setTimeout(function() {
   vm1.title = "Changed by title";
+  vm1.show();
   
 }, 3000);
 var vm2 = new Vue({
