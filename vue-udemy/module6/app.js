@@ -2,7 +2,7 @@ var data = {
     status : 'Critical'
 }
 
-Vue.component('my-component', {
+var cmp =  {
     data() {
         return {
     status : 'Critical'
@@ -14,10 +14,13 @@ Vue.component('my-component', {
             this.status = "changed"
         }
     }
-})
+}
 
 new Vue({
-    el:'#app'
+    el:'#app',
+    components: {
+        'my-component' : cmp
+    }
 });
 
 new Vue({
