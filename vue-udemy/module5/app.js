@@ -55,6 +55,9 @@ var vm3 = new Vue({
   template: '<h1>Hello</h1>',
 });
 
-vm3.$mount('#app3');
+vm3.$mount();
+
+document.getElementById('app3').appendChild(vm3.$el);
+
 
 
