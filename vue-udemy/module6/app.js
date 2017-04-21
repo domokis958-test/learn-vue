@@ -19,3 +19,7 @@ Vue.component('my-component', {
 new Vue({
     el:'#app'
 });
+
+new Vue({
+    el:'#app2'
+});
