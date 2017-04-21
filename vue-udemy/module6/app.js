@@ -4,7 +4,9 @@ var data = {
 
 Vue.component('my-component', {
     data() {
-        return data;
+        return {
+    status : 'Critical'
+    }
     },
     template: '<p>Server status : {{ status }} (<button @click="change">change</button></p>',
     methods: {
