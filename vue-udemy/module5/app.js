@@ -4,7 +4,6 @@ var data = {
   };
 
 var vm1 = new Vue({
-  el: '#app1',
   data: data,
   methods: {
     show: function() {
@@ -29,6 +28,8 @@ var vm1 = new Vue({
   }
 });
 
+vm1.$mount('#app1');
+
 vm1.newProp = 'New'; // this also works. we are creating new property. but this is not watched by vue and is useless for many things.
 console.log(vm1.$data === data);
 vm1.$refs.heading.innerText = 'Something else';
@@ -48,4 +49,12 @@ var vm2 = new Vue({
        vm1.title = 'Changed';
     }
   }
-})
+});
+
+var vm3 = new Vue({
+  template: '<h1>Hello</h1>',
+});
+
+vm3.$mount('#app3');
+
+
