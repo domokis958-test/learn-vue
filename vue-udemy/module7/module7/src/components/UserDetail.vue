@@ -18,6 +18,7 @@
             },
             resetName() {
                 this.myName = 'Max';
+                this.$emit('nameWasReset', this.myName);
             }
         }
     }
