@@ -9,10 +9,11 @@
                 <app-user-detail 
                 v-bind:myName="name" 
                 v-on:nameWasReset="name = $event"
-                v-bind:resetFn="resetName"></app-user-detail>
+                v-bind:resetFn="resetName"
+                :userAge="age"></app-user-detail>
             </div>
             <div class="col-xs-12 col-sm-6">
-                <app-user-edit></app-user-edit>
+                <app-user-edit :userAge="age"></app-user-edit>
             </div>
         </div>
     </div>
@@ -26,6 +27,7 @@
         data() {
             return {
                 name : "Max",
+                age : 27,
             };
         },
         
