@@ -10,8 +10,10 @@
     export default {
         props: {
             myName: {
-                type:String,
-                default:'Max'
+                type:Object,
+                default:{
+                    name:'Max'
+                }
             }
                 
         },
