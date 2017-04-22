@@ -11,7 +11,7 @@
         props: {
             myName: {
                 type:String,
-                required:true,
+                default:'Max'
             }
                 
         },
