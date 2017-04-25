@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>THe author</h3>
+        <h3>The author</h3>
     </div>
 </template>
 

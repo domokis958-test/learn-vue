@@ -3,14 +3,17 @@
         <div class="row">
             <div class="col-xs-12">
                 <button @click="selectedComponent = 'appQuote'">Quote</button>
-                <button @click="selectedComponent = 'Author'">Author</button>
-                <button @click="selectedComponent = 'New'">New</button>
+                <button @click="selectedComponent = 'appAuthor'">Author</button>
+                <button @click="selectedComponent = 'appNew'">New</button>
                 <hr>
                 <p> {{ selectedComponent }}</p>
-                <app-quote>
+                <component :is="selectedComponent">
+                    <p>Default content</p>
+                </component>
+                <!--<app-quote>
                     <h2 slot="title">{{quoteTitle}}</h2>
                     <p slot>A wonderful Quote</p>
-                </app-quote>
+                </app-quote>-->
             </div>
         </div>
     </div>
