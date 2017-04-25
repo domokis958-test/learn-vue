@@ -16,6 +16,12 @@
         },
         destroyed() {
             console.log("destoyed");
+        },
+        deactivated() {
+            console.log("deactivated");
+        },
+        activated() {
+            console.log("activated");
         }
     }
     
