@@ -7,7 +7,7 @@
                     <hr>
                     <div class="form-group">
                         <label for="email">Mail</label>
-                        <input type="text" id="email" class="form-control" v-model.lazy="userData.email">
+                        <input type="text" id="email" class="form-control" :value="userData.email" @input = "userData.email = $event.target.value">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
