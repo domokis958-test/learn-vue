@@ -14,7 +14,10 @@
 <script>
     import {fruitMixin} from './FruitMixin'
     export default {
-        mixins: [fruitMixin]
+        mixins: [fruitMixin],
+        created() {
+            console.log('list created');
+        }
     }
 </script>
 
