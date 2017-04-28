@@ -5,6 +5,11 @@ Vue.filter('to-lowercase', function(value) {
     return value.toLowerCase();
 });
 
+Vue.filter('length', (value) => {
+    return value + value.length;
+
+})
+
 Vue.mixin({
     created() {
         console.log('Global Mixin - Created Hook');
