@@ -5,7 +5,7 @@
                 <h1>Animations</h1>
                 <hr>
                 <br>
-                <select v-model="alertAnimation" class="form-control">
+                <select v-model="alertAnimation" class="form-control" >
                     <option value="fade">Fade</option>
                     <option value="slide">Slide</option>
                 </select>
@@ -19,6 +19,10 @@
                 </transition>
                 <transition enter-active-class="animated bounce" leave-active-class="animated shake" appear >
                     <div class="alert alert-info" v-if="show"> This is some info</div>
+                </transition>
+                <transition :name=alertAnimation>
+                    <div class="alert alert-info" v-show="show"> This is some info</div>
+                    <div class="alert alert-warning" v-show="!show"> This is some warning</div>
                 </transition>
 
             </div>
@@ -79,7 +83,7 @@
 
     .slide-leave-active {
         animation: slide-out 1s ease-out forwards;
-        transition: opacity 3s;
+        transition: opacity 1s;
         opacity: 0;
 
     }
