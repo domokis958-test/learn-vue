@@ -12,7 +12,7 @@
                 <transition name="slide" type="animation">
                     <div class="alert alert-info" v-if="show"> This is some info</div>
                 </transition>
-                <transition name="fade">
+                <transition name="fade" appear>
                     <div class="alert alert-info" v-if="show"> This is some info</div>
                 </transition>
 
