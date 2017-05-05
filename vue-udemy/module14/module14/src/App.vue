@@ -26,7 +26,12 @@
                 </transition>
                 <hr>
                 <button class="btn btn-primary" @click="selectedComponent == 'app-success-alert' ?  selectedComponent='app-danger-alert' : selectedComponent='app-success-alert'">Toggle Components</button>
-                <component :is="selectedComponent"></component>
+                <br><br>
+                <transition name="fade" mode="out-in">
+                    <component :is="selectedComponent"></component>
+                </transition>
+                <hr>
+                
 
             </div>
         </div>
