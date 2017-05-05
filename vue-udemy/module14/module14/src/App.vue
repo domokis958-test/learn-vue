@@ -20,7 +20,7 @@
                 <transition enter-active-class="animated bounce" leave-active-class="animated shake" appear >
                     <div class="alert alert-info" v-if="show"> This is some info</div>
                 </transition>
-                <transition :name=alertAnimation>
+                <transition :name=alertAnimation mode="out-in">
                     <div class="alert alert-info" v-if="show" key="info"> This is some info</div>
                     <div class="alert alert-warning" v-else key="warning"> This is some warning</div>
                 </transition>
