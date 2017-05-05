@@ -24,6 +24,9 @@
                     <div class="alert alert-info" v-if="show" key="info"> This is some info</div>
                     <div class="alert alert-warning" v-else key="warning"> This is some warning</div>
                 </transition>
+                <hr>
+                <button class="btn btn-primary" @click="selectedComponent == 'app-success-alert' ?  selectedComponent='app-danger-alert' : selectedComponent='app-success-alert'">Toggle Components</button>
+                <component :is="selectedComponent"></component>
 
             </div>
         </div>
@@ -31,13 +34,19 @@
 </template>
 
 <script>
+    import DangerAlert from './DangerAlert.vue'
+    import SuccessAlert from './SuccessAlert.vue'
     export default {
         data() {
             return {
-                show: true,
-                alertAnimation : 'fade'
-
+                show: false,
+                alertAnimation : 'fade',
+                selectedComponent : 'app-success-alert'
             }
+        },
+        components: {
+            appDangerAlert : DangerAlert,
+            appSuccessAlert : SuccessAlert
         }
     }
 
