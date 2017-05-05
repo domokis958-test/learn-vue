@@ -9,7 +9,7 @@
                 <transition name="fade">
                     <div class="alert alert-info" v-if="show"> This is some info</div>
                 </transition>
-                <transition name="slide">
+                <transition name="slide" type="animation">
                     <div class="alert alert-info" v-if="show"> This is some info</div>
                 </transition>
 
