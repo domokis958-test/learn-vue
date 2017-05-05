@@ -52,11 +52,13 @@
     }
 
     .slide-enter {
+        opacity: 0
         /*transform: translateY(20px); // NOT required as done in keyframe*/
 
     }
 
     .slide-enter-active {
+        transition: opacity 0.5s;
         animation: slide-in 1s ease-out forwards
 
     }
@@ -67,7 +69,9 @@
     }
 
     .slide-leave-active {
-        animation: slide-out 1s ease-out forwards
+        animation: slide-out 1s ease-out forwards;
+        transition: opacity 1s;
+        opacity: 0;
 
     }
 
