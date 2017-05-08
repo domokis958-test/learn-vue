@@ -9,23 +9,23 @@ import Header from './components/Header.vue'
 const User = resolve => {
     require.ensure(['./components/User/User.vue'], () => {
         resolve(require('./components/User/User.vue'));
-    })
+    }, 'user')
 }
 
 const UserStart = resolve => {
     require.ensure(['./components/User/UserStart.vue'], () => {
         resolve(require('./components/User/UserStart.vue'));
-    })
+    }, 'user')
 }
 const UserEdit = resolve => {
     require.ensure(['./components/User/UserEdit.vue'], () => {
         resolve(require('./components/User/UserEdit.vue'));
-    })
+    }, 'user')
 }
 const UserDetail = resolve => {
     require.ensure(['./components/User/UserDetail.vue'], () => {
         resolve(require('./components/User/UserDetail.vue'));
-    })
+    }, 'user')
 }
 
 export const routes = [
