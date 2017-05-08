@@ -9,6 +9,9 @@ const router = new VueRouter({
   routes : routes,
   mode : 'history',
   scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
     if (to.hash) {
       return {
         selector : to.hash
@@ -16,7 +19,7 @@ const router = new VueRouter({
     }
     return {
       x : 0,
-      y : 700
+      y : 0
     }
   }
 });
