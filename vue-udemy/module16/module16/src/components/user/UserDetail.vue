@@ -24,6 +24,19 @@
                     hash: '#data'
                 }
             }
+        },
+        beforeRouteLeave: (to, from, next) => {
+            // ... I cant access this.link here as this has not been created. we do it inside next()
+            // next(vm => {
+            //     vm.link
+            // });
+
+
+            if (true) { // checking if user is authenticated. here just making it true
+                next();
+            } else {
+                next(false);
+            }
         }
     }
 

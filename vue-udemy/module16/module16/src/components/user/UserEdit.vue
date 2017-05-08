@@ -3,6 +3,7 @@
         <h3>Edit the User</h3>
     <p>user has locale {{  $route.query.locale }}</p>
         <p>user has q {{  $route.query.q }}</p>
+        <button class="btn btn-primary">Confirm</button>
         <div style="height : 700px"></div>
         <p id="data">Some extra data</p>
 

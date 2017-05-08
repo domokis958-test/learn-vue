@@ -24,6 +24,12 @@ const router = new VueRouter({
   }
 });
 
+router.beforeEach((to, from, next) => {
+  console.log("before each");
+  next();
+  // to and from are both route objects
+})
+
 new Vue({
   el: '#app',
   router, // works as key and value name is same. es6.
