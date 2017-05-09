@@ -16,13 +16,13 @@ export const store = new Vuex.Store({
         }
     },
     mutations: {
-        increment: state =>  {
+        increment: (state, payload) =>  {
             // would not work. we need synch operations. 
             //setTimeout()
-            state.counter++;
+            state.counter += payload;
         },
-        decreament: state => {
-            state.counter--;
+        decreament: (state, payload) => {
+            state.counter -= payload;
         }
     },
     actions: {
@@ -31,11 +31,11 @@ export const store = new Vuex.Store({
         //     context.commit('increment');
         // },
 
-        increment : ({commit}) => {
-            commit('increment');
+        increment : ({commit}, payload) => {
+            commit('increment', payload);
         },
-        decreament : ({commit}) => {
-            commit('decreament');
+        decreament : ({commit}, payload) => {
+            commit('decreament', payload);
         },
         asyncIncrement : ({commit}) => {
             setTimeout(() => {
