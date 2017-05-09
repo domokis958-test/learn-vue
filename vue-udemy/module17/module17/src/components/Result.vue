@@ -9,10 +9,14 @@
     import { mapGetters } from 'vuex'
     export default {
         // props: ['counter']
-        computed:
-            mapGetters([
+        computed: {
+            ...mapGetters([
                 'doubleCounter',
                 'stringCounter'
-            ])
+            ]),
+            ourOwnComputed() {
+                
+            }
+        }
     }
 </script>
