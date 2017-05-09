@@ -17,6 +17,8 @@ export const store = new Vuex.Store({
     },
     mutations: {
         increment: state =>  {
+            // would not work. we need synch operations. 
+            //setTimeout()
             state.counter++;
         },
         decreament: state => {
