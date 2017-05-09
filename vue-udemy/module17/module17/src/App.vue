@@ -11,7 +11,7 @@
                 <hr>
                 <hr>
 
-                <input type="text" v-model="value">
+                <input type="text" :value="value"  @input="updateValue">
                 <p>{{  value }}</p>
             </div>
         </div>
@@ -30,6 +30,12 @@
             value() {
                 return this.$store.getters.value;
             }
+        },
+        methods: {
+            updateValue() {
+                this.$store.dispatch('updateValue', event.target.value);
+            }
+            
         },
         components: {
             appCounter: Counter,
