@@ -17,7 +17,7 @@
                         <li class="dropdown" :class = "{open : isDropDownOpen}" @click="isDropDownOpen = !isDropDownOpen">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Save and load <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Save data</a></li>
+                                <li><a href="#" @click="saveData">Save data</a></li>
                                 <li><a href="#">Load data</a></li>
                             </ul>
                         </li>
@@ -31,7 +31,8 @@
 </template>
 
 <script>
-    import {mapActions} from 'vuex'
+    import {mapActions} from 'vuex';
+    import {mapGetters} from 'vuex';
     export default {
         data() {
             return {
@@ -40,9 +41,11 @@
 
         },
         computed: {
-            funds() {
-                return this.$store.getters.funds;
-            }
+            ...mapGetters([
+                'funds',
+                'stockPortfolio',
+                'stocks'
+            ]),
         },
         methods: {
             ...mapActions([
@@ -51,6 +54,14 @@
             ]),
             endDay() {
                 this.randomizeStocks();
+            },
+            saveData() {
+                const data = {
+                    funds : this.funds,
+                    stockPortfolio : this.stockPortfolio,
+                    stocks : this.stocks
+                }
+                this.$http.put('data.json', data);
             }
         }
     }
