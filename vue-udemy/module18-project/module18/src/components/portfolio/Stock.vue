@@ -9,56 +9,42 @@
             </div>
             <div class="panel-body">
                 <div class="pull-left">
-                    <input 
-                        type="number"
-                        class="form-control"
-                        placeholder="Quantity"
-                        v-model="quantity"
-                    >
+                    <input type="number" class="form-control" placeholder="Quantity" v-model="quantity">
                 </div>
                 <div class="pull-right">
-                    <button
-                        class="btn btn-success"
-                        @click="sellStock"
-                        :disabled = "quantity <= 0 || Number.isInteger(quantity)">
+                    <button class="btn btn-success" @click="sellStock" :disabled="quantity <= 0 || Number.isInteger(quantity)">
                         Sell</button>
                 </div>
             </div>
         </div>
-    </div>        
+    </div>
 </template>
 
 
 <script>
-import { mapActions } from 'vuex';
+    import { mapActions } from 'vuex';
     export default {
         props: ['stock'],
-        data () {
+        data() {
             return {
-                quantity : 0
+                quantity: 0
             }
         },
-        computed: {
-    //         ...mapActions({
-    //   sellStock2: 'sellStock2' // map this.add() to this.$store.dispatch('increment')
-    // }),
-        },
-        //     ...mapActions(['sellStock2'])
-        // },
         methods: {
             ...mapActions({
-      sellStock2: 'sellStock2' // map this.add() to this.$store.dispatch('increment')
-    }),
+                portfolioSellStock: 'sellStock' // map this.portfolioSellStock() to this.$store.dispatch('sellStock')
+            }),
             sellStock() {
                 const order = {
-                    stockId : this.stock.id,
-                    stockPrice : this.stock.price,
-                    quantity : this.quantity
+                    stockId: this.stock.id,
+                    stockPrice: this.stock.price,
+                    quantity: this.quantity
                 }
-                this.$store.dispatch('sellStock2', order);
-                console.log("before sending order is {}",order);
-                //this.sellStock2(order);
+                //this.$store.dispatch('sellStock2', order);
+                console.log("before sending order is {}", order);
+                this.portfolioSellStock(order);
             }
         }
     }
+
 </script>
