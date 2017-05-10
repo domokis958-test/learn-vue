@@ -18,7 +18,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Save and load <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#" @click="saveData">Save data</a></li>
-                                <li><a href="#">Load data</a></li>
+                                <li><a href="#" @click="loadData">Load data</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -48,10 +48,12 @@
             ]),
         },
         methods: {
-            ...mapActions([
-                'randomizeStocks'
+            ...mapActions({
 
-            ]),
+                randomizeStocks : 'randomizeStocks',
+                loadDataHttp : 'loadData'
+
+            }),
             endDay() {
                 this.randomizeStocks();
             },
@@ -61,7 +63,12 @@
                     stockPortfolio : this.stockPortfolio,
                     stocks : this.stocks
                 }
-                this.$http.put('data.json', data);
+                this.$http.put('data.json', data)
+                    .then(response => console.log(response))
+                    .catch(response => console.log(response));
+            },
+            loadData() {
+                this.loadDataHttp();
             }
         }
     }
