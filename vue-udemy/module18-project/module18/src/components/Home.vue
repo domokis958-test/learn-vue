@@ -15,6 +15,15 @@
                 return this.$store.getters.funds;
             }
             
+        },
+        created () {
+            this.$http.get('/user?ID=12345')
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
         }
     }
 </script>
