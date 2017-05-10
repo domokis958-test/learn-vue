@@ -23,7 +23,7 @@
         },
         computed: {
             stocks() {
-                this.$store.getters.stock;
+                return this.$store.getters.stocks;
             }
         }
     }
