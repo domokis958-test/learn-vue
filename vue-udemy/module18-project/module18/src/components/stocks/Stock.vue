@@ -45,6 +45,7 @@
                     quantity : this.quantity
                 }
                 console.log("bought");
+                this.$store.dispatch('buyStock', order);
                 this.quantity = 0;
             }
         }
