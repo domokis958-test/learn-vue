@@ -1,6 +1,6 @@
 <template>
     <div class="col-sm-6 col-md-4">
-        <div class="panel panel-success">
+        <div class="panel panel-info">
             <div class="panel-heading">
                 <h3 class="panel-title">
                     {{stock.name}}
@@ -30,7 +30,7 @@
 
 
 <script>
-    import {mapActions} from 'vuex';
+import { mapActions } from 'vuex';
     export default {
         props: ['stock'],
         data () {
@@ -39,18 +39,25 @@
             }
         },
         computed: {
-            ...mapActions({
-                sStock : 'sellStock'
-            })
+    //         ...mapActions({
+    //   sellStock2: 'sellStock2' // map this.add() to this.$store.dispatch('increment')
+    // }),
         },
+        //     ...mapActions(['sellStock2'])
+        // },
         methods: {
+            ...mapActions({
+      sellStock2: 'sellStock2' // map this.add() to this.$store.dispatch('increment')
+    }),
             sellStock() {
                 const order = {
-                    stockId: this.stock.id,
+                    stockId : this.stock.id,
                     stockPrice : this.stock.price,
                     quantity : this.quantity
                 }
-                this.sStock(order);
+                this.$store.dispatch('sellStock2', order);
+                console.log("before sending order is {}",order);
+                //this.sellStock2(order);
             }
         }
     }
