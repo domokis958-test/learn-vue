@@ -17,7 +17,7 @@ const actions = {
                         stockPortfolio,
                         funds
                     }
-                    console.log(data);
+                    console.log("data returned is {}", data);
 
                     commit('SET_STOCKS', stocks);
                     commit('SET_PORTFOLIO', portfolio);
